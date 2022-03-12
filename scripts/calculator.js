@@ -19,6 +19,7 @@ window.onload = () => {
       return;
     }
     let result;
+
     switch (operator) {
       case '+':
         result = num1 + num2;
@@ -37,7 +38,7 @@ window.onload = () => {
         result = num1 / num2;
     }
     message.className = 'normal';
-    message.innerText = result;
+    message.innerText = `${num1} ${operator} ${num2} = ${result}`;
   }
   document.getElementById('num1').addEventListener('keyup', calculate);
   document.getElementById('num2').addEventListener('keyup', calculate);
