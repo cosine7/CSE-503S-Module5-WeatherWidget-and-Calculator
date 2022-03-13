@@ -10,25 +10,20 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   function fetchWeather() {
-    const xhr = new XMLHttpRequest();
-    xhr.responseType = 'json';
-    xhr.open('GET', 'https://classes.engineering.wustl.edu/cse330/content/weather_json.php');
-    xhr.send();
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState !== 4) {
-        return;
-      }
-      const { response } = xhr;
-      temperature.innerText = response.current.temp;
-      humidity.innerText = response.atmosphere.humidity;
-      const strong = document.createElement('strong');
-      strong.innerText = response.location.city;
-      location.innerHTML = '';
-      location.append(strong);
-      location.append(` ${response.location.state}`);
-      tomorrowImg.src = getImageURL(response.tomorrow.code);
-      dayafterImg.src = getImageURL(response.dayafter.code);
-    };
+    fetch('https://classes.engineering.wustl.edu/cse330/content/weather_json.php')
+      .then((response) => response.json())
+      .then((data) => {
+        temperature.innerText = data.current.temp;
+        humidity.innerText = data.atmosphere.humidity;
+        const strong = document.createElement('strong');
+        strong.innerText = data.location.city;
+        location.innerHTML = '';
+        location.append(strong);
+        location.append(` ${data.location.state}`);
+        tomorrowImg.src = getImageURL(data.tomorrow.code);
+        dayafterImg.src = getImageURL(data.dayafter.code);
+      })
+      .catch((error) => alert(error));
   }
   fetchWeather();
 
