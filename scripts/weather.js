@@ -31,4 +31,9 @@ window.addEventListener('DOMContentLoaded', () => {
     };
   }
   fetchWeather();
+
+  const button = document.createElement('button');
+  button.addEventListener('click', fetchWeather);
+  button.innerText = 'Update';
+  document.body.append(button);
 });
