@@ -1,3 +1,7 @@
-[Module Link](https://classes.engineering.wustl.edu/cse330/index.php/Module_5)
+# Module
+
+[Module Detail](https://classes.engineering.wustl.edu/cse330/index.php/Module_5)
+
+# Description
 
 A simple JavaScript calculator and Weather Widget
