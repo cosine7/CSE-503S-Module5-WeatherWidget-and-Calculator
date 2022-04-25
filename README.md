@@ -1,7 +1,3 @@
-# CSE330
+[Module Link](https://classes.engineering.wustl.edu/cse330/index.php/Module_5)
 
-Name: ChenXiao Liu
-
-Student ID: 499688
-
-GitHub Username: cosine7
+A simple JavaScript calculator and Weather Widget
