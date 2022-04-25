@@ -8,25 +8,25 @@ function getImageURL(code) {
   return `http://us.yimg.com/i/us/nws/weather/gr/${code}ds.png`;
 }
 
-function fetchWeather() {
-  fetch('https://classes.engineering.wustl.edu/cse330/content/weather_json.php')
-    .then((response) => response.json())
-    .then((data) => {
-      temperature.innerText = data.current.temp;
-      humidity.innerText = data.atmosphere.humidity;
-      const strong = document.createElement('strong');
-      strong.innerText = data.location.city;
-      location.innerHTML = '';
-      location.append(strong);
-      location.append(` ${data.location.state}`);
-      tomorrowImg.src = getImageURL(data.tomorrow.code);
-      dayafterImg.src = getImageURL(data.dayafter.code);
-    })
-    .catch((error) => alert(error));
+async function fetchWeather() {
+  try {
+    const response = await fetch('https://classes.engineering.wustl.edu/cse330/content/weather_json.php');
+    const data = await response.json();
+    temperature.innerText = data.current.temp;
+    humidity.innerText = data.atmosphere.humidity;
+    const strong = document.createElement('strong');
+    strong.innerText = data.location.city;
+    location.innerHTML = '';
+    location.append(strong, ` ${data.location.state}`);
+    tomorrowImg.src = getImageURL(data.tomorrow.code);
+    dayafterImg.src = getImageURL(data.dayafter.code);
+  } catch (error) {
+    window.alert(error);
+  }
 }
-fetchWeather();
 
 const button = document.createElement('button');
 button.addEventListener('click', fetchWeather);
 button.innerText = 'Update';
 document.body.append(button);
+await fetchWeather();
