@@ -5,7 +5,7 @@ const num2Text = document.getElementById('num2');
 
 function calculate() {
   if (num1Text.value === '' || num2Text.value === '') {
-    message.innerText = '';
+    message.textContent = '';
     return;
   }
   const num1 = Number(num1Text.value);
@@ -25,13 +25,13 @@ function calculate() {
       break;
     default:
       if (num2 === 0) {
-        message.innerText = 'Divisor should not be 0';
+        message.textContent = 'Divisor should not be 0';
         return;
       }
       result = num1 / num2;
   }
   message.className = 'normal';
-  message.innerText = `${num1} ${operator} ${num2} = ${result}`;
+  message.textContent = `${num1} ${operator} ${num2} = ${result}`;
 }
 
 num1Text.addEventListener('keyup', calculate);

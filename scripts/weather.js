@@ -12,10 +12,10 @@ async function fetchWeather() {
   try {
     const response = await fetch('https://classes.engineering.wustl.edu/cse330/content/weather_json.php');
     const data = await response.json();
-    temperature.innerText = data.current.temp;
-    humidity.innerText = data.atmosphere.humidity;
+    temperature.textContent = data.current.temp;
+    humidity.textContent = data.atmosphere.humidity;
     const strong = document.createElement('strong');
-    strong.innerText = data.location.city;
+    strong.textContent = data.location.city;
     location.innerHTML = '';
     location.append(strong, ` ${data.location.state}`);
     tomorrowImg.src = getImageURL(data.tomorrow.code);
@@ -27,6 +27,6 @@ async function fetchWeather() {
 
 const button = document.createElement('button');
 button.addEventListener('click', fetchWeather);
-button.innerText = 'Update';
+button.textContent = 'Update';
 document.body.append(button);
 await fetchWeather();
