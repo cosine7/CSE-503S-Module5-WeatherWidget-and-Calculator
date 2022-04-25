@@ -4,4 +4,4 @@
 
 # Description
 
-A simple JavaScript calculator and Weather Widget
+A simple JavaScript calculator and weather widget
