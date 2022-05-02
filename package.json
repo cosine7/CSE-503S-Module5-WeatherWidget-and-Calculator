@@ -3,5 +3,21 @@
     "eslint": "^8.11.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4"
-  }
+  },
+  "name": "cse-503s-module5-weatherwidget-and-calculator",
+  "description": "[Detail](https://classes.engineering.wustl.edu/cse330/index.php/Module_5)",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cosine7/CSE-503S-Module5-WeatherWidget-and-Calculator.git"
+  },
+  "author": "ChenXiaoLiu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cosine7/CSE-503S-Module5-WeatherWidget-and-Calculator/issues"
+  },
+  "homepage": "https://github.com/cosine7/CSE-503S-Module5-WeatherWidget-and-Calculator#readme"
 }

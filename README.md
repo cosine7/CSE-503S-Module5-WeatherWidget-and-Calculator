@@ -1,6 +1,6 @@
-# Module
+# Module Requirement
 
-[Module Detail](https://classes.engineering.wustl.edu/cse330/index.php/Module_5)
+[Detail](https://classes.engineering.wustl.edu/cse330/index.php/Module_5)
 
 # Description
 
